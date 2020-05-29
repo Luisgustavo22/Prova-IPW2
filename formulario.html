@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <?php
+    if(isset($_GET["mensagem"]) & !empty($_GET["mensagem"])){
+      if($_GET["mensagem"]=="sucesso"){
+        echo "O Aluno e o Livro foram cadastrados com sucesso!!!";
+      }elseif ($_GET["mensagem"]=="erro") {
+        echo "Erro ao cadastrar o Aluno e o Livro !!!";
+      }
+    }
+  ?>
+    <form action="../controler/controle.php" method="post">
+      <label>Nome: </label>
+      <input type="text" name="nome" value="">
+      <label>Serie:</label>
+      <input type="text" name="serie" value="">
+      <label>Turma:</label>
+      <input type="text" name="turma" value="">
+      <label>NomeLivre:</label>
+      <input type="text" name="nomeLivro" value="">
+      <input type="submit" name="" value="Enviar">
+    </form>
+  </body>
+</html>

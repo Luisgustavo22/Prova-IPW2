@@ -1,0 +1,12 @@
+<form action="controllerCadastro.php" method="post">
+	<label>Nome: </label>
+	<input type="text" name="nome"><br>
+	<label>Serie: </label>
+	<input type="text" name="serie"><br>
+	<label>Turma: </label>
+	<input type="text" name="turma"><br>
+	<label>NomeLivro: </label>
+	<input type="text" name="nomeLivro"><br>
+	
+	<input type="submit" value="Cadastrar">
+</form>

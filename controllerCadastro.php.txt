@@ -1,0 +1,22 @@
+<?php
+        $Nome= $_POST["Nome"];
+	$Turma= $_POST["Turma"];
+	$Serie = $_POST["Serie"];
+	$NomeLivro= $_POST["NomeLivro"];
+	
+	include("Conexao");
+	
+	$sql = "insert into cliente (Turma,Serie,NomeLivro) 
+	values ('$Nome','$Turma','$Serie','$NomeLivro')";
+	
+	echo $sql;
+	
+	//exit;
+	$retornoInserir = $conectar->query($sql);
+		
+	if($conectar->affected_rows){
+		echo "O Aluno <b>$Nome</b>e o Livro <b>$NomeLivro<b> foram cadastrados";	
+	}else{
+		echo "Não foi possível cadastrar o Aluno <b>$nome</b> e o livro <b>NomeLivro<b>";	
+	}
+?>

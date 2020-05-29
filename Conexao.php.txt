@@ -1,0 +1,30 @@
+<?php
+	$local = "localhost";
+	$usuario = "root";
+	$senha = "";
+	$database = "xxxx";
+	$conectar = new mysqli($local, $usuario, $senha, $database);
+	//nao tem base de dados//
+	$stringBusca = "select * from Aluno";
+	
+	$retornoAluno = $conectar->query($stringBusca);
+	
+	$listarDados = array();//array dinâmico
+	while($listar = $retornoCliente->fetch_array()) {
+		$listarDados[] = $listar;	
+	}	
+	?>
+	<table>
+        <th>Nome</th>
+	<th>Serie</th>
+	<th>Turma</th>
+        <th>NomeLivro</th>
+	<?php
+	foreach($listarDados as $chave => $value){
+		echo "<tr><td>". $chave . "</td>";
+                echo "<td>". $value["Nome"] . "</td>";		
+		echo "<td>". $value["Serie"] . "</td>";
+		echo "<td>". $value["Turma"] . "</td>";
+		echo "<td>". $value["NomeLivro"] . "</td></tr>";
+	}
+?>
